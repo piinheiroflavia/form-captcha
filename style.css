@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@1&family=Poppins:wght@400;500;600&display=swap');
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+fieldset{
+    font-weight: bold;
+    color: #000000;
+    margin: 50px;
+   padding: 20px 118px 20px 49px;  
+   border: 2px solid #000000;
+}
+legend{
+    padding: 0px 5px;
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 25px 100px;
+}
+label{
+    color: #000;
+    font-size: 0.9rem;
+}
+#first_name, #email, #company, #telephony, textarea, select, #cnpj{ 
+    padding: 8px 15px ;
+    width: 100%;
+    margin: 2px 2px ;
+    border-radius: 3px;
+    border: 1px solid  rgb(211, 211, 211);
+    border-bottom: 3px solid rgb(211, 211, 211); 
+    box-shadow: rgba(0, 0, 0, 0.082) 0px 2px 4px;
+}
+
+input:focus, textarea:focus{
+    outline: none;
+}
+textarea, textarea:focus{
+    height: 100px;
+}
+#respSucesso, #respError{
+    padding: 5px 0px;
+}
+#btn{
+    background-color: #CA1C2A;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    margin: 5px 0px;
+    padding: 10px 35px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+    font-weight:600;
+    cursor:not-allowed;
+}
+.blocoCaptcha{
+    margin-top: 50px;
+}
+  .blocoCaptcha .captcha-area{
+    display: flex;
+    height: 65px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .captcha-area .captcha-img{
+    height: 80%;
+    width: 345px;
+    user-select: none;
+    background-image: url(./captcha-bg.png);
+    border-radius: 5px;
+    position: relative;
+  }
+  .captcha-img .captcha{
+    position: absolute;
+    
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    font-weight: normal;
+    font-size: 1.5rem;
+    text-align: center;
+    letter-spacing: 10px;
+    transform: translate(-50%, -50%);
+    text-shadow: 0px 0px 2px #b1b1b1;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .blocoCaptcha button{
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background:#CA1C2A;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .blocoCaptcha button:hover{
+    background:#ca1c2bea;
+  }
+  .captcha-area .reload-btn{
+    width: 75px;
+    height: 80%;
+    font-size: 25px;
+    margin-left: 5px;
+  }
+  .captcha-area .reload-btn i{
+    transition: transform 0.9s ease;
+  }
+  .captcha-area .reload-btn:hover i{
+    transform: rotate(25deg);
+  }
+  .blocoCaptcha .input-area{
+    height: 60px;
+    width: 100%;
+    position: relative;
+  }
+  .input-area input{
+    width: 100%;
+    height: 60%;
+    outline: none;
+    font-size: 20px;
+    border-radius: 5px;
+    border: 1px solid #bfbfbf;
+  }
+  .input-area input:is(:focus, :valid){
+    border: 2px solid #4db2ec;
+  }
+  .input-area input::placeholder{
+    color: #bfbfbf;
+  }
+  .input-area .check-btn{
+    position: absolute;
+    right: 7px;
+    top: 35%;
+    font-size: 1rem;
+    height: 35px;
+    padding: 0 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+  .input-area input:valid + .check-btn{
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .blocoCaptcha .status-text{
+    display: none;
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin: 5px 0px;
+  }
+  
+  @media (max-width: 506px){
+    body{
+      padding: 0 10px;
+    }
+    .blocoCaptcha{
+      padding: 22px 25px 35px;
+    }
+    .blocoCaptcha header{
+      font-size: 25px;
+    }
+    .blocoCaptcha .captcha-area{
+      height: 60px;
+    }
+    .captcha-area .captcha{
+      font-size: 28px;
+      letter-spacing: 5px;
+    }
+    .captcha-area .reload-btn{
+      width: 60px;
+      margin-left: 5px;
+      font-size: 20px;
+    }
+    .blocoCaptcha .input-area{
+      height: 55px;
+    }
+    .input-area .check-btn{
+      height: 40px;
+    }
+    .blocoCaptcha .status-text{
+      font-size: 15px;
+    }
+    .captcha-area .captcha-img{
+      width: 250px;
+    }
+  }

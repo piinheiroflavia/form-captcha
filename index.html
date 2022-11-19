@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+    <title>Formulário</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--No action adiciona a url para onde vc quer enviar os dados do formulário, no inputs comentados adiciona os valores que CRM  -->
+    <form class="formulario" action="" method="POST" >
+        
+        <!--<input type=hidden name="oid" value="">
+        <input type=hidden name="retURL" value="">
+        <input type=hidden name="oid" value="">-->
+        
+        <fieldset>
+            <legend>Formulário</legend>
+            <label for="first_name" id="resName">Nome: </label><br>
+                <input  id="first_name" class="inputs" maxlength="60"  name="first_name" size="20" type="text" placeholder="Digite seu nome" onkeyup="validaName()" onkeypress="return ApenasLetras(event,this)" />
+            <br>
+            
+            
+            <label for="telephony" id="resPhone">Telefone: </label><br>
+            <input  id="telephony"  class="inputs" maxlength="14" name="telephony" size="20" type="text" placeholder="Digite seu telefone"  oninput="validaTelephony( this, mtel )">
+            <br>
+            
+            <label for="email" id="resEmail">Email: </label><br>
+                <input  id="email" class="inputs" maxlength="80" name="email" size="20" type="text" placeholder="Digite seu email" onkeyup="validaEmail(this.value)"/>
+            <br>
+
+            <label for="company" id="resCompany" >Empresa:</label><br>
+                <input  id="company" class="inputs" maxlength="40" name="company" size="20" type="text" placeholder="Digite sua empresa" onkeyup="validaCompany()"  onkeypress="return ApenasLetras(event,this)"/>
+            <br>
+
+            <label for="CNPJ:" id="resCnpj">CNPJ: </label><br>
+                <input id="cnpj" class="inputs" type="text" placeholder="CNPJ" maxlength="18" />
+            <br>
+           
+            <label for="subject" id="resAssunto">Assunto</label><br>
+                <select class="my-select-menu"  id="subject" name="subject">
+                    <option value="">Escolher opção</option>
+                    <option value="">Comercial</option>
+                    <option value="Suporte Técnico">Suporte Técnico</option>
+                    <option value="Administrativo/financero">Administrativo/Financeiro</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            <br>
+
+            <label for="messege" id="resMessege">Mensagem: </label><br>
+                <textarea id="messege" class="inputs" placeholder="Digite aqui sua mensagem.." onkeyup="validaMessege()"></textarea>
+            <br>
+            <!--bloco para verificação se é um bot ou não-->
+            <div class="blocoCaptcha">
+                <div class="captcha-area">
+                    <div class="captcha-img">
+                        <!--no span entra o valor de forma aleartória da função do javascript-->
+                        <span class="captcha"></span>
+                    </div>
+                    <button class="reload-btn"><i class="fas fa-redo-alt"></i></button>
+                </div>
+                <!--caixa para a resposta se está correto a sequência ou não-->
+                <div class="status-text"></div>
+                <div action="#" class="input-area">
+                    <input type="text" id="input-captcha" placeholder="Enter captcha" maxlength="6" spellcheck="false" onkeyup="validaCaptcha()" required>
+                    <button class="check-btn" >enviar</button>
+                </div>
+            </div>
+            <!--respostas geral se todos os inputs estão preenchidos ou não-->
+            <div id="respErro" class="loader">
+                <p></p>
+            </div>
+            <div id="respSucesso" class="loader"> 
+                <p></p>
+            </div>
+            <button id="btn" type="submit" name="submit" disabled  >Enviar</button>
+        </fieldset>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
