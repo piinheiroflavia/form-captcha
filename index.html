@@ -58,6 +58,10 @@
             <label for="messege" id="resMessege">Mensagem: </label><br>
                 <textarea id="messege" class="inputs" placeholder="Digite aqui sua mensagem.." onkeyup="validaMessege()"></textarea>
             <br>
+            <div class="">
+                <input type="checkbox" value="false" name="confirm" id="termos_de_contrato" class="form-check-input" onclick="validarTermo()"> 
+                <label title for="termos_de_contrato" class="form-check-label">Eu li e concordo com os Termos e Condições.</label>
+            </div>
             <!--bloco para verificação se é um bot ou não-->
             <div class="blocoCaptcha">
                 <div class="captcha-area">
@@ -86,7 +90,7 @@
         </fieldset>
 
         <button type="submit" class="btn btn-primary" id="btn" value="submit" disabled >
-            Enviando  </button>
+            Enviar  </button>
          
            <div class="toast-container position-fixed bottom-0 star-0 p-3">
              <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

@@ -29,6 +29,9 @@ let validCnpj = false;
 let assunto = document.querySelector('#subject');
 let resAssunto = document.querySelector('#resAssunto')
 
+let checkbox = document.querySelector("#termos_de_contrato") 
+checkbox = false
+let labelCheck = document.querySelector(".form-check-label")
 let btn = document.querySelector('#btn');
 let inputCaptcha = document.querySelector('#input-captcha')
 let validCaptcha = false
@@ -286,7 +289,7 @@ function validar(){
         respSucesso.style.fontSize = '0.8rem'
         respSucesso.innerHTML = 'Formulário Preenchido'
         respErro.innerHTML ='' 
-                 
+        btn.disabled = true      
               
     }else{
         respErro.style.fontSize = '0.8rem'
@@ -299,6 +302,12 @@ function validar(){
         btn.style.cursor = 'no-drop'          
     }
 }
+function validarTermo(){
+
+    btn.disabled = false;
+    btn.style = 'background-color: #CA1C2A'
+    btn.style.cursor = 'pointer'        
+    }
 
 const toastTrigger = document.getElementById('btn')
 const toastLiveExample = document.getElementById('liveToast')
