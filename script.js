@@ -299,3 +299,13 @@ function validar(){
         btn.style.cursor = 'no-drop'          
     }
 }
+
+const toastTrigger = document.getElementById('btn')
+const toastLiveExample = document.getElementById('liveToast')
+
+ if (toastTrigger) {
+ const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+ toastTrigger.addEventListener('click', () => {
+   toastBootstrap.show()
+ })
+} 
